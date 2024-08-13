@@ -46,16 +46,50 @@ let quotes = [
   },
 ];
 
+let currentDate = new Date();
+
+let days = [
+  "Dimanche",
+  "Lundi",
+  "Mardi",
+  "Mercredi",
+  "Jeudi",
+  "Vendredi",
+  "Samedi",
+];
+let months = [
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+  "Septembre",
+  "Octobre",
+  "Novembre",
+  "Décembre",
+];
+
 let quote = document.querySelector("#citation");
 let author = document.querySelector("#auteur");
 let btn = document.querySelector("#nouveau");
+let date = document.querySelector(".date");
 
 function change() {
   let index = Math.floor(Math.random() * quotes.length);
-  console.log(index);
+
   quote.innerText = quotes[index].quote;
   author.innerText = quotes[index].auteur;
 }
 
 btn.addEventListener("click", change);
-change();
+
+let day = days[currentDate.getDay()];
+let month = months[currentDate.getMonth()];
+let hour = currentDate.getHours();
+let minute = currentDate.getMinutes();
+let year = currentDate.getFullYear();
+
+date.innerText = `${day} ${month} ${year} - ${hour}h:${minute}min`;

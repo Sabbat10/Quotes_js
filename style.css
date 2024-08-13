@@ -27,6 +27,14 @@ body {
   font-style: italic;
 }
 
+.date {
+  font-size: 1em;
+  text-align: center;
+  font-style: italic;
+  color: #ff5e62;
+  padding-top: 5px;
+}
+
 #nouveau {
   background: #ff9966;
   background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
